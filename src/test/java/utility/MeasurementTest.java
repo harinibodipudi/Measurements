@@ -14,5 +14,4 @@ public class MeasurementTest {
         assertTrue(centimeter1.equals(centimeter2));
     }
 
-    
 }
