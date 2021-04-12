@@ -22,5 +22,11 @@ public class MeasurementTest {
         assertTrue(meter.equals(centimeter));
     }
 
+    @Test
+    void testIf100CentimeterIsEqualsTo0_001Kilometer() {
+        Measurement centimeter = new Measurement(100,"cm");
+        Measurement kilometer = new Measurement(0.001,"km");
 
+        assertTrue(centimeter.equals(kilometer));
+    }
 }
