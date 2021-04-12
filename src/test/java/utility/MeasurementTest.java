@@ -14,4 +14,13 @@ public class MeasurementTest {
         assertTrue(centimeter1.equals(centimeter2));
     }
 
+    @Test
+    void testIf1meterIsEqualsTo100Centimeter() {
+        Measurement meter = new Measurement(1,"m");
+        Measurement centimeter = new Measurement(100,"cm");
+
+        assertTrue(meter.equals(centimeter));
+    }
+
+
 }

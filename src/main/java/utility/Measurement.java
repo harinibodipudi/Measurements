@@ -2,8 +2,6 @@ package utility;
 
 public class Measurement {
 
-
-
     int value;
     String units;
 
@@ -15,7 +13,11 @@ public class Measurement {
     @Override
     public boolean equals(Object obj) {
         Measurement measure = (Measurement) obj;
-        return measure.units == this.units && measure.value == this.value;
+        if(measure.units == this.units)
+            return measure.value == this.value;
+        else
+            return measure.value == 100*this.value;
+
     }
 
 
