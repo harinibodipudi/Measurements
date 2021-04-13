@@ -36,11 +36,11 @@ public class Measurement {
         return 1000 * value;
     }
 
-    public Measurement add(Measurement measure1, String expectedMetric) {
-        if(expectedMetric.equals("m") && measure1.units.equals("cm")){
-            return new Measurement(convertCentimeterToMeter(measure1.value)+this.value,expectedMetric);
+    public Measurement add(Measurement measure, String expectedMetric) {
+        if(expectedMetric.equals("m") && measure.units.equals("cm")){
+            return new Measurement(convertCentimeterToMeter(measure.value)+this.value,expectedMetric);
         }
-        return new Measurement(convertKilometerToCentimeter(measure1.value)+this.value,expectedMetric);
+        return new Measurement(convertKilometerToCentimeter(measure.value)+this.value,expectedMetric);
     }
 
     private double convertKilometerToCentimeter(double value) {
@@ -49,5 +49,12 @@ public class Measurement {
 
     private double convertCentimeterToMeter(double value) {
         return (value)/100;
+    }
+
+    public Measurement subtract(Measurement measure, String expectedMetric) {
+        if(expectedMetric.equals("m") && measure.units.equals("cm")){
+            return new Measurement(this.value-convertCentimeterToMeter(measure.value),expectedMetric);
+        }
+        return new Measurement(0,"m");
     }
 }

@@ -54,4 +54,18 @@ public class MeasurementTest {
 
         assertTrue(result.equals(expectedResult));
     }
+
+    @Test
+    void testIf1meterMinus50centimeterIsEqualTo0_5meter() {
+        Measurement meter = new Measurement(1,"m");
+        Measurement centimeter = new Measurement(50,"cm");
+        Measurement expectedResult = new Measurement(0.5,"m");
+        String expectedMetric = "m";
+
+        Measurement result = meter.subtract(centimeter,expectedMetric);
+
+        assertTrue(result.equals(expectedResult));
+    }
+
+
 }
