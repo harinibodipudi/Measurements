@@ -29,4 +29,16 @@ public class MeasurementTest {
 
         assertTrue(meter.equals(kilometer));
     }
+
+    @Test
+    void testIf1meterPlus100CentimeterIsEqualTo2meter() {
+        Measurement meter = new Measurement(1,"m");
+        Measurement centimeter = new Measurement(100,"cm");
+        Measurement expectedResult = new Measurement(2.0,"m");
+        String expectedMetric = "m";
+
+        Measurement result = meter.add(centimeter,expectedMetric);
+
+        assertTrue(result.equals(expectedResult));
+    }
 }
