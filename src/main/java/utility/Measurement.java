@@ -40,7 +40,11 @@ public class Measurement {
         if(expectedMetric.equals("m") && measure1.units.equals("cm")){
             return new Measurement(convertCentimeterToMeter(measure1.value)+this.value,expectedMetric);
         }
-        return new Measurement(4,"km");
+        return new Measurement(convertKilometerToCentimeter(measure1.value)+this.value,expectedMetric);
+    }
+
+    private double convertKilometerToCentimeter(double value) {
+        return 100000*value;
     }
 
     private double convertCentimeterToMeter(double value) {

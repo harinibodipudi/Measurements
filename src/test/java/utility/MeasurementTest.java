@@ -41,4 +41,17 @@ public class MeasurementTest {
 
         assertTrue(result.equals(expectedResult));
     }
+
+    @Test
+
+    void testIf200centimeterPlus1kilometerIsEqualTo100200Centimeter() {
+        Measurement centimeter = new Measurement(200,"cm");
+        Measurement kilometer = new Measurement(1,"km");
+        Measurement expectedResult = new Measurement(100200,"cm");
+        String expectedMetric = "cm";
+
+        Measurement result = centimeter.add(kilometer,expectedMetric);
+
+        assertTrue(result.equals(expectedResult));
+    }
 }
