@@ -13,12 +13,12 @@ public class Measurement {
     @Override
     public boolean equals(Object obj) {
         Measurement measure = (Measurement) obj;
-        if(measure.units == this.units)
+        if(measure.units.equals("cm") && this.units.equals("m")) {
+            return measure.value == 100 * this.value;
+        } else if(measure.units == this.units)
             return measure.value == this.value;
-        else if(measure.units.equals("m") && this.units.equals("cm"))
-            return measure.value == 100*this.value;
         else
-            return 100000*measure.value == this.value;
+            return 1000*measure.value == this.value;
     }
 
 

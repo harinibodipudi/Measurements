@@ -23,10 +23,10 @@ public class MeasurementTest {
     }
 
     @Test
-    void testIf100CentimeterIsEqualsTo0_001Kilometer() {
-        Measurement centimeter = new Measurement(100,"cm");
-        Measurement kilometer = new Measurement(0.001,"km");
+    void testIf100meterIsEqualsTo0_1Kilometer() {
+        Measurement meter = new Measurement(100,"m");
+        Measurement kilometer = new Measurement(0.1,"km");
 
-        assertTrue(centimeter.equals(kilometer));
+        assertTrue(meter.equals(kilometer));
     }
 }
