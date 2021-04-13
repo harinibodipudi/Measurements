@@ -67,5 +67,15 @@ public class MeasurementTest {
         assertTrue(result.equals(expectedResult));
     }
 
+    @Test
+    void testIf2000centimeterMinus1meterIsEqualTo1900centimeter() {
+        Measurement centimeter = new Measurement(2000,"cm");
+        Measurement meter = new Measurement(1,"m");
+        Measurement expectedResult = new Measurement(1900,"cm");
+        String expectedMetric = "cm";
 
+        Measurement result = centimeter.subtract(meter,expectedMetric);
+
+        assertTrue(result.equals(expectedResult));
+    }
 }

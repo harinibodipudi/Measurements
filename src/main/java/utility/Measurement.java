@@ -5,16 +5,6 @@ public class Measurement {
     double value;
     String units;
 
-//    public String getExpectedMetric() {
-//        return expectedMetric;
-//    }
-//
-//    public void setExpectedMetric(String expectedMetric) {
-//        this.expectedMetric = expectedMetric;
-//    }
-//
-//    private String expectedMetric;
-
     public Measurement(double value, String units) {
         this.value = value;
         this.units = units;
@@ -51,10 +41,17 @@ public class Measurement {
         return (value)/100;
     }
 
+    private double convertMeterToCentimeter(double value) {
+        return value*100;
+    }
+
+
     public Measurement subtract(Measurement measure, String expectedMetric) {
         if(expectedMetric.equals("m") && measure.units.equals("cm")){
             return new Measurement(this.value-convertCentimeterToMeter(measure.value),expectedMetric);
         }
-        return new Measurement(0,"m");
+        return new Measurement(this.value-convertMeterToCentimeter(measure.value),expectedMetric);
     }
+
+
 }
