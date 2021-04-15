@@ -1,13 +1,17 @@
 package utility;
 
 public class Measurement<T> {
+    private T measurement1, measurement2;
+    public Measurement(T obj1 , T obj2 ){
+        this.measurement1=obj1;
+        this.measurement2=obj2;
+    }
 
-
-       public <T extends Length> T add(T obj1,T obj2 ,String expectedMetric){
-           if(obj1.getClass()==Length.class && obj2.getClass()==Length.class){
-               return (T)obj1.add(obj2,expectedMetric);
+    public <T extends Length & Weight<T>> T add(String expectedMetric){
+           if(measurement1.getClass()==Length.class && measurement2.getClass()==Length.class){
+               return (T) ((T)measurement1).add((Length) measurement2,expectedMetric);
            }else{
-               return obj1;
+               return (T)((T)measurement1).add((Weight) measurement2,expectedMetric);
            }
        }
 }

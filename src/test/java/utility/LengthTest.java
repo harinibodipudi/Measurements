@@ -81,9 +81,9 @@ public class LengthTest {
     }
     @Test
     public void testIfGenericClassIsWorking(){
-        Measurement<Length> length = new Measurement<>();
+        Measurement<Length> length = new Measurement<>(new Length(2,"cm"), new Length(1,"m"));
         Length expectedValue = new Length(2,"cm").add(new Length(1,"m"),"m");
-        Length actualValue = length.add(new Length(2,"cm"), new Length(1,"m"),"m");
+        Length actualValue = length.add("m");
 
         Assertions.assertTrue(expectedValue.equals(actualValue));
     }

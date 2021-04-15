@@ -26,7 +26,8 @@ public class Weight {
         return 1000 * value;
     }
 
-    public Weight add(Length measure, String expectedMetric) {
+    public Weight add(Weight measure, String expectedMetric) {
+        System.out.println("weight class");
         if(expectedMetric.equals("kg") && measure.units.equals("g")){
             return new Weight(convertCentimeterToMeter(measure.value)+this.value,expectedMetric);
         }
@@ -46,7 +47,7 @@ public class Weight {
     }
 
 
-    public Weight subtract(Length measure, String expectedMetric) {
+    public Weight subtract(Weight measure, String expectedMetric) {
         if(expectedMetric.equals("m") && measure.units.equals("cm")){
             return new Weight(this.value-convertCentimeterToMeter(measure.value),expectedMetric);
         }
