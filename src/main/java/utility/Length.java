@@ -1,11 +1,12 @@
 package utility;
 
-public class Length{
+public class Length extends Measurement{
 
     double value;
     String units;
 
     public Length(double value, String units) {
+        super();
         this.value = value;
         this.units = units;
     }

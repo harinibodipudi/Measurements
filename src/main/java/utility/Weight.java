@@ -1,11 +1,12 @@
 package utility;
 
-public class Weight {
+public class Weight extends Measurement {
 
     double value;
     String units;
 
     public Weight(double value, String units) {
+        super();
         this.value = value;
         this.units = units;
     }
@@ -22,7 +23,7 @@ public class Weight {
 
     }
 
-    private double convertMeterToKiloMeter(double value) {
+    public double convertMeterToKiloMeter(double value) {
         return 1000 * value;
     }
 
@@ -34,15 +35,15 @@ public class Weight {
         return new Weight(convertKilometerToCentimeter(measure.value)+this.value,expectedMetric);
     }
 
-    private double convertKilometerToCentimeter(double value) {
+    public double convertKilometerToCentimeter(double value) {
         return 100000*value;
     }
 
-    private double convertCentimeterToMeter(double value) {
+    public double convertCentimeterToMeter(double value) {
         return (value)/100;
     }
 
-    private double convertMeterToCentimeter(double value) {
+    public double convertMeterToCentimeter(double value) {
         return value*100;
     }
 
