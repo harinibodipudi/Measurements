@@ -7,11 +7,11 @@ public class Measurement<T> {
         this.measurement2=obj2;
     }
 
-    public <T extends Length & Weight<T>> T add(String expectedMetric){
+    public <T extends Length, U extends Weight> U add(String expectedMetric){
            if(measurement1.getClass()==Length.class && measurement2.getClass()==Length.class){
-               return (T) ((T)measurement1).add((Length) measurement2,expectedMetric);
+               return (U)measurement1;
            }else{
-               return (T)((T)measurement1).add((Weight) measurement2,expectedMetric);
+               return (U)((U)measurement1).add((Weight) measurement2,expectedMetric);
            }
        }
 }

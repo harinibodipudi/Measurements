@@ -1,6 +1,6 @@
 package utility;
 
-public class Length {
+public class Length{
 
     double value;
     String units;
