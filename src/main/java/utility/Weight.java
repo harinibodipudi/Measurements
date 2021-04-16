@@ -13,46 +13,24 @@ public class Weight extends Measurement {
 
     @Override
     public boolean equals(Object obj) {
-        Weight quantity = (Weight) obj;
-        if(quantity.units == this.units)
-            return quantity.value == this.value;
-        else if(quantity.units.equals("g") && this.units.equals("kg")) {
-            return this.value == convertCentimeterToMeter(quantity.value);
+        Weight measure = (Weight) obj;
+        if(measure.units == this.units)
+            return measure.value == this.value;
+        else if(measure.units.equals("g") && this.units.equals("kg")) {
+            return this.value == kilogramToGram(measure.value);
         } else
-            return this.value == convertMeterToKiloMeter(quantity.value);
+            return this.value == gramToKilogram(measure.value);
 
     }
 
-    public double convertMeterToKiloMeter(double value) {
+    public double gramToKilogram(double value) {
+
         return 1000 * value;
     }
 
-    public Weight add(Weight measure, String expectedMetric) {
-        System.out.println("weight class");
-        if(expectedMetric.equals("kg") && measure.units.equals("g")){
-            return new Weight(convertCentimeterToMeter(measure.value)+this.value,expectedMetric);
-        }
-        return new Weight(convertKilometerToCentimeter(measure.value)+this.value,expectedMetric);
-    }
+    public double kilogramToGram(double value) {
 
-    public double convertKilometerToCentimeter(double value) {
-        return 100000*value;
-    }
-
-    public double convertCentimeterToMeter(double value) {
-        return (value)/100;
-    }
-
-    public double convertMeterToCentimeter(double value) {
-        return value*100;
-    }
-
-
-    public Weight subtract(Weight measure, String expectedMetric) {
-        if(expectedMetric.equals("m") && measure.units.equals("cm")){
-            return new Weight(this.value-convertCentimeterToMeter(measure.value),expectedMetric);
-        }
-        return new Weight(this.value-convertMeterToCentimeter(measure.value),expectedMetric);
+        return (value)/1000;
     }
 
 
