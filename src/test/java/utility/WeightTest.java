@@ -20,4 +20,11 @@ public class WeightTest {
                         .add(new Weight(1,"kg"),"g"))
                 .equals(new Weight(1010,"g")));
     }
+
+    @Test
+    void testIf1_5KiloGramsMinus500GramsIsEqualTo1KiloGrams() {
+        Assertions.assertTrue((new Weight(1.5,"kg")
+                .subtract(new Weight(500,"g"),"kg"))
+                .equals(new Weight(1,"kg")));
+    }
 }

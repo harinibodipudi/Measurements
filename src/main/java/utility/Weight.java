@@ -37,5 +37,8 @@ public class Weight extends Measurement {
         return new Weight(kilogramToGram(measure.value)+this.value,expectedMetric);
     }
 
+    public Weight subtract(Weight measure, String expectedMetric) {
+        return new Weight(this.value-gramToKilogram(measure.value),expectedMetric);
+    }
 
 }
