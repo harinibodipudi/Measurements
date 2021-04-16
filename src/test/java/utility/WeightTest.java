@@ -13,4 +13,11 @@ public class WeightTest {
     void testIf0_1KilogramIsEqualTo100Grams() {
         Assertions.assertTrue(new Weight(0.1,"kg").equals(new Weight(100,"g")));
     }
+
+    @Test
+    void testIf10GramsPlus1KiloGramIsEqualTo1010Grams() {
+        Assertions.assertTrue((new Weight(10,"g")
+                        .add(new Weight(1,"kg"),"g"))
+                .equals(new Weight(1010,"g")));
+    }
 }

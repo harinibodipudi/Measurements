@@ -7,7 +7,7 @@ public class Measurement<T extends Measurement> {
            if(measurement1.getClass()== Length.class && measurement2.getClass()==Length.class){
                return (T)((Length)measurement1).add((Length) measurement2,expectedMetric);
            }else{
-               return (T)measurement1;
+               return (T)((Weight)measurement1).add((Weight) measurement2,expectedMetric);
            }
        }
 }

@@ -16,7 +16,7 @@ public class Weight extends Measurement {
         Weight measure = (Weight) obj;
         if(measure.units == this.units)
             return measure.value == this.value;
-        else if(measure.units.equals("g") && this.units.equals("kg")) {
+        else if(measure.units.equals("kg") && this.units.equals("g")) {
             return this.value == kilogramToGram(measure.value);
         } else
             return this.value == gramToKilogram(measure.value);
@@ -25,12 +25,16 @@ public class Weight extends Measurement {
 
     public double gramToKilogram(double value) {
 
-        return 1000 * value;
+        return value/1000;
     }
 
     public double kilogramToGram(double value) {
 
-        return (value)/1000;
+        return (value)*1000;
+    }
+
+    public Weight add(Weight measure, String expectedMetric) {
+        return new Weight(kilogramToGram(measure.value)+this.value,expectedMetric);
     }
 
 
