@@ -8,4 +8,9 @@ public class WeightTest {
     void testIf1GramIsEqualTo1Gram() {
        Assertions.assertTrue(new Weight(1,"g").equals(new Weight(1,"g")));
     }
+
+    @Test
+    void testIf0_1KilogramIsEqualTo100Grams() {
+        Assertions.assertTrue(new Weight(0.1,"kg").equals(new Weight(100,"g")));
+    }
 }
