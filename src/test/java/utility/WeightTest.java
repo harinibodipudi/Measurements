@@ -37,4 +37,6 @@ public class WeightTest {
 
         Assertions.assertTrue(expectedValue.equals(actualValue));
     }
+    //As an architect, I want to be able to check if 0 Celsius is equal to 32 Fahrenheit, and 0 Kelvin is equal to
+    //-273 Celsius
 }
