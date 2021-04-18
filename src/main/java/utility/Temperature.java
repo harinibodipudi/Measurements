@@ -13,10 +13,10 @@ public class Temperature extends Measurement{
     @Override
     public boolean equals(Object obj) {
         Temperature temperature = (Temperature) obj;
-        if(this.unit=="celcius" && temperature.unit=="fahrenheit"){
+        if(this.unit=="celsius" && temperature.unit=="fahrenheit"){
             return temperature.value == (this.value*9/5)+32;
         }else{
-            return this.value == 273.15+temperature.value;
+            return this.value == 273+temperature.value;
         }
     }
 }
